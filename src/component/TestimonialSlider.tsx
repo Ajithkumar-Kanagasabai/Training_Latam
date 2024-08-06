@@ -46,7 +46,7 @@ const TestimonialSlider: React.FC = () => {
     };
 
     return (
-        <div className="mt-8 relative flex flex-col items-center justify-center w-full px-28">
+        <div className="mt-8 relative flex flex-col items-center justify-center w-full px-4">
             <div className="w-full flex items-center justify-center">
                 <div className="w-full overflow-hidden">
                     <div
@@ -55,13 +55,14 @@ const TestimonialSlider: React.FC = () => {
                     >
                         {testimonials.map((testimonial, index) => (
                             <div key={index} className="flex-shrink-0 w-full flex justify-center">
-                                <div className="flex flex-col items-center p-12 pl-40 bg-white rounded-lg shadow-lg md:flex-row bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url('/assets/Testimonials/Group 877.png')` }}>
-                                    <div className='w-[100%] flex flex-col'>
+                                <div className="flex flex-row items-center p-6 bg-white rounded-lg shadow-lg bg-cover bg-center bg-no-repeat gap-4" style={{ backgroundImage: `url('/assets/Testimonials/Group 877.png')` }}>
+                                    <div className='w-full flex flex-col items-center'>
                                         <Image
                                             src={testimonial.image}
                                             alt={testimonial.name}
+                                            className="w-40 h-40 sm:h-60 sm:w-60 lg:w-80 sm:w-80"
                                         />
-                                        <p className="mt-12 text-lg text-white font-semibold">{testimonial.name}</p>
+                                        <p className="mt-6 text-lg text-white font-semibold">{testimonial.name}</p>
                                         <p className="text-sm text-white">{testimonial.role}</p>
                                         <div className="flex mt-2 gap-2">
                                             {Array.from({ length: testimonial.rating }).map((_, i) => (
@@ -69,22 +70,21 @@ const TestimonialSlider: React.FC = () => {
                                             ))}
                                         </div>
                                     </div>
-                                    <div className="w-full mt-4 px-20 md:ml-6 md:mt-0 relative">
+                                    <div className="w-full mt-4 px-4 relative">
                                         <div className="absolute -top-8 left-0 animate-float">
                                             <Image
                                                 src={QuoteTop}
                                                 alt="Quote Top"
-                                                width={50}
-                                                height={50}
+                                                className='w-6 h-6 md:w-12 md:h-8'
                                             />
                                         </div>
-                                        <p className="mt-4 text-white" style={{ lineHeight: "30px" }}>{testimonial.text}</p>
+                                        <p className="hidden sm:flex mt-4 text-white text-center" style={{ lineHeight: "30px" }}>{testimonial.text}</p>
+                                        <p className="flex sm:hidden mt-4 text-[10px] text-white text-center">{testimonial.text}</p>
                                         <div className="absolute -bottom-8 right-0 animate-float">
                                             <Image
                                                 src={QuoteBottom}
                                                 alt="Quote Bottom"
-                                                width={50}
-                                                height={50}
+                                                className='w-6 h-6 md:w-12 md:h-8'
                                             />
                                         </div>
                                     </div>
@@ -96,7 +96,7 @@ const TestimonialSlider: React.FC = () => {
             </div>
             <div className="mt-12 flex items-center justify-center">
                 <button onClick={prevSlide} className="focus:outline-none">
-                    <FaArrowLeft className="text-2xl mx-4" />
+                    <FaArrowLeft className="text-md sm:text-xl lg:text-2xl mx-2" />
                 </button>
                 {testimonials.map((_, index) => (
                     <span
@@ -106,7 +106,7 @@ const TestimonialSlider: React.FC = () => {
                     ></span>
                 ))}
                 <button onClick={nextSlide} className="focus:outline-none">
-                    <FaArrowRight className="text-2xl mx-4" />
+                    <FaArrowRight className="text-md sm:text-xl lg:text-2xl mx-2" />
                 </button>
             </div>
         </div>

@@ -42,13 +42,13 @@ const features = [
 
 const FeaturesSection: React.FC = () => {
     return (
-        <section className="py-16 px-4 bg-white">
+        <section className="py-4 md:py-16 px-4 md:px-20 bg-white">
             <div className="max-w-7xl mx-auto text-center">
                 <h2 className="text-3xl font-bold mb-4">What Makes Us The Best Academy Online?</h2>
                 <p className="text-gray-600 mb-12">
                     At TRAINING LATAM, we aim to help Latin American talent land remote jobs with UK clients. We have established strong alliances with local companies eager to onboard our alumni, providing them immediate opportunities to apply their newly acquired skills. You gain access to industry connections and real-world job prospects by choosing us, ensuring a smooth transition from training to employment.
                 </p>
-                <div className="px-8 grid gap-8 grid-cols-1 md:grid-cols-2">
+                <div className="grid gap-8 grid-cols-1 lg:grid-cols-2">
                     {features.map((feature, index) => (
                         <div key={index} className="flex flex-row p-6 rounded-lg shadow-md items-center">
                             <div className="w-[50%] text-4xl mb-4">

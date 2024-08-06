@@ -5,9 +5,9 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Image from 'next/image';
 import Google from "../../public/assets/Icons/Google.png";
-import Fb from "../../public/assets/Icons/Facebook.png";
-import Youtube from "../../public/assets/Icons/YouTube.png";
-import Pinterest from "../../public/assets/Icons/Pinterest.png";
+import Fb from "../../public/assets/Icons/FacebookScroll.png";
+import Youtube from "../../public/assets/Icons/YouTubeScroll.png";
+import Pinterest from "../../public/assets/Icons/PinterestScroll.png";
 import Twitch from "../../public/assets/Icons/Twitch.png";
 import Webflow from "../../public/assets/Icons/Webflow.png";
 

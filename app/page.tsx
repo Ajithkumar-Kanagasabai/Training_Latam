@@ -20,6 +20,7 @@ export default function Home() {
         <FeaturesSection />
         <StatsSection />
         <TestimonialSlider />
+        <Footer />
       </div>
     </main>
   );
