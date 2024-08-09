@@ -60,7 +60,7 @@ const TestimonialSlider: React.FC = () => {
                                         <Image
                                             src={testimonial.image}
                                             alt={testimonial.name}
-                                            className="w-40 h-40 sm:h-60 sm:w-60 lg:w-80 sm:w-80"
+                                            className="w-40 h-40 sm:w-60 sm:h-60 md:w-68 md:h-68 lg:w-80 lg:h-80"
                                         />
                                         <p className="mt-6 text-lg text-white font-semibold">{testimonial.name}</p>
                                         <p className="text-sm text-white">{testimonial.role}</p>

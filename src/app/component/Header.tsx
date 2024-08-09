@@ -105,13 +105,13 @@ const Header: React.FC = () => {
                                 </svg>
                             </button>
                         </Link>
-                        {isCoursesDropdownOpen && (
+                        {/* {isCoursesDropdownOpen && (
                             <div className="w-[300px] absolute bg-white border mt-1 rounded shadow-lg z-10">
                                 <Link href="#" className="block px-4 py-3 text-[#464646] hover:text-[#20C997] hover:font-bold">Full Stack Development</Link>
                                 <Link href="#" className="block px-4 py-3 text-[#464646] hover:text-[#20C997] hover:font-bold">Data Science and Analytics</Link>
                                 <Link href="#" className="block px-4 py-3 text-[#464646] hover:text-[#20C997] hover:font-bold">DevOps and IT Management</Link>
                             </div>
-                        )}
+                        )} */}
                     </div>
                     <Link href="/contact" className="text-[#464646] hover:text-[#20C997] hover:font-bold">Contact</Link>
                 </nav>

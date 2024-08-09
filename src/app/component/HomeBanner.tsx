@@ -18,10 +18,15 @@ const HeroSlider: React.FC = () => {
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 3000,
+        appendDots: (dots: React.ReactNode) => (
+            <div style={{ position: 'absolute', bottom: '10px', width: '100%' }}>
+                <ul className="flex justify-center">{dots}</ul>
+            </div>
+        ),
     };
 
     return (
-        <Slider {...settings} className="my-5 relative">
+        <Slider {...settings} className="my-5 relative overflow-hidden">
             {images.map((image, index) => (
                 <div key={index} className="relative flex items-center justify-center">
                     <Image src={image} alt={`Slide ${index}`} width={1920} height={1080} className="object-cover" />
