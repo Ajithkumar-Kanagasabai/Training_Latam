@@ -3,16 +3,19 @@ import Vector1 from "../../../public/assets/course/Vector (1).png";
 import Vector2 from "../../../public/assets/course/Vector (2).png";
 import Vector3 from "../../../public/assets/course/Vector (3).png";
 import Time from "../../../public/assets/course/Group.png";
-
 import Image from 'next/image';
 
+interface CourseCardProps {
+    selectedCourse: string;
+}
 
-const CourseCard: React.FC = () => {
+const CourseCard: React.FC<CourseCardProps> = ({ selectedCourse }) => {
+
     return (
         <div className="md:px-20 bg-white p-6 rounded-lg">
             <div className='flex flex-col md:flex-row'>
                 <div className='flex flex-col w-full md:w-[60%] mb-6 md:mb-0'>
-                    <h1 className="text-2xl md:text-3xl font-bold mb-4">Full Stack Development</h1>
+                    <h1 className="text-2xl md:text-3xl font-bold mb-4">{selectedCourse}</h1>
                     <p className="text-gray-700 mb-4">
                         This course provides a comprehensive introduction to full stack development, covering the basics of both front-end and back-end technologies. Students will learn about HTML, CSS, JavaScript, and basic server-side scripting. This is an ideal course for beginners who are new to web development.
                     </p>

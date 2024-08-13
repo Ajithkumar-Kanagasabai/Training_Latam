@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Header from '../app/component/Header'
 import "../app/globals.css";
 import Footer from '../app/component/Footer';
@@ -9,12 +9,14 @@ import ReviewsSection from '../app/coursePage/ReviewsSection';
 import FAQ from '../app/coursePage/FAQ';
 
 
-const course = () => {
+const course: React.FC = () => {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const [selectedCourse, setSelectedCourse] = useState<string>('Full Stack Development');
     return (
         <>
             <section>
-                <Header />
-                <CourseCard />
+                <Header onSelectCourse={setSelectedCourse} />
+                <CourseCard selectedCourse={selectedCourse} />
                 <CourseDetails />
                 <Syllabus />
                 <ReviewsSection />

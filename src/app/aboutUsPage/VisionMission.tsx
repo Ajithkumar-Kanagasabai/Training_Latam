@@ -3,7 +3,7 @@ import React from 'react';
 const VisionMission: React.FC = () => {
     return (
         <div className="w-full">
-            <section className="bg-gradient-to-r from-black to-gray-800 text-white py-16 px-6 md:px-16">
+            <section className="text-white py-8 lg:py-16 px-4 md:px-20" style={{ backgroundImage: 'url(/assets/about/ourvision.png)', backgroundSize: 'cover', backgroundPosition: 'center', height: '100%', width: '100%' }}>
                 <h2 className="text-2xl md:text-4xl font-bold mb-6">OUR VISION</h2>
                 <div className="h-1 w-8 bg-[#316B89] mb-1 ml-6"></div>
                 <div className="h-1 w-16 bg-[#20C997] mb-1"></div>
@@ -19,12 +19,12 @@ const VisionMission: React.FC = () => {
                 </p>
             </section>
 
-            <section className="bg-white text-gray-800 py-16 px-6 md:px-16">
+            <section className="bg-gray-100 text-gray-800 py-8 lg:py-16 px-4 md:px-20">
                 <h2 className="text-2xl md:text-4xl font-bold mb-6">OUR MISSION</h2>
                 <div className="h-1 w-8 bg-[#316B89] mb-1 ml-6"></div>
                 <div className="h-1 w-16 bg-[#20C997] mb-1"></div>
                 <div className="h-1 w-4 bg-[#316B89] mb-4"></div>
-                <p className="text-lg md:text-xl">
+                <p className="text-lg md:text-xl mt-8">
                     At TRAINING LATAM, we aim to empower Latin American talent by providing rigorous training programs that equip individuals with the skills needed to thrive in the global IT sector. We strive to bridge the gap between ambition and achievement, ensuring our students are prepared for success in remote job opportunities with UK clients and beyond.
                 </p>
             </section>

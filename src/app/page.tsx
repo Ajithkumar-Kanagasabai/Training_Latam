@@ -1,3 +1,5 @@
+"use client"
+import React, { useState } from 'react'
 import Header from "@/src/app/component/Header";
 import HeroSlider from "@/src/app/component/HomeBanner";
 import "./globals.css";
@@ -10,10 +12,13 @@ import Footer from "@/src/app/component/Footer";
 
 
 export default function Home() {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const [selectedCourse, setSelectedCourse] = useState<string>('Full Stack Development');
+
   return (
     <main>
       <div>
-        <Header />
+        <Header onSelectCourse={setSelectedCourse} />
         <HeroSlider />
         <IconCarousel />
         <CourseSection />
