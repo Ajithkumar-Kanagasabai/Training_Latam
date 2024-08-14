@@ -12,9 +12,6 @@ import Linkedin from "../../../public/assets/Icons/LinkedIn.png";
 import Youtube from "../../../public/assets/Icons/YouTube.png";
 import Link from 'next/link';
 
-
-
-
 const Footer: React.FC = () => {
     return (
         <footer className="text-black py-8 px-20">
@@ -37,22 +34,24 @@ const Footer: React.FC = () => {
                 <div className="flex flex-col gap-4 mt-8 md:my-4">
                     <h3 className="text-lg font-semibold mb-2">Follow on Instagram</h3>
                     <div className='md:mt-2 flex flex-row gap-4'>
-                        <div className="w-60 h-60 md:w-20 md:h-20 overflow-hidden">
-                            <Image src={Insta1} alt="Instagram 1" layout="responsive" width={128} height={128} objectFit="cover" />
+                        <div className="relative w-40 h-40 md:w-20 md:h-20 overflow-hidden aspect-w-1 aspect-h-1">
+                            <Image src={Insta1} alt="Instagram 1" layout="fill" objectFit="cover" />
                         </div>
-                        <div className="w-60 h-60 md:w-20 md:h-20 overflow-hidden">
-                            <Image src={Insta2} alt="Instagram 2" layout="responsive" width={128} height={128} objectFit="cover" />
+                        <div className="relative w-40 h-40 md:w-20 md:h-20 overflow-hidden aspect-w-1 aspect-h-1">
+                            <Image src={Insta2} alt="Instagram 2" layout="fill" objectFit="cover" />
                         </div>
                     </div>
                     <div className='flex flex-row gap-4'>
-                        <div className="w-60 h-60 md:w-20 md:h-20 overflow-hidden">
-                            <Image src={Insta3} alt="Instagram 3" layout="responsive" width={128} height={128} objectFit="cover" />
+                        <div className="relative w-40 h-40 md:w-20 md:h-20 overflow-hidden aspect-w-1 aspect-h-1">
+                            <Image src={Insta3} alt="Instagram 3" layout="fill" objectFit="cover" />
                         </div>
-                        <div className="w-60 h-60 md:w-20 md:h-20 overflow-hidden">
-                            <Image src={Insta4} alt="Instagram 4" layout="responsive" width={128} height={128} objectFit="cover" />
+                        <div className="relative w-40 h-40 md:w-20 md:h-20 overflow-hidden aspect-w-1 aspect-h-1">
+                            <Image src={Insta4} alt="Instagram 4" layout="fill" objectFit="cover" />
                         </div>
                     </div>
                 </div>
+
+
             </div>
 
             <div className="mt-16 container mx-auto flex flex-col md:flex-row items-center justify-between">

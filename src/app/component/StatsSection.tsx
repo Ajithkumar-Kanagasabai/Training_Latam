@@ -9,12 +9,12 @@ import Group1 from "../../../public/assets/Icons/Group (1).png";
 const StatsSection: React.FC = () => {
     return (
         <section className="max-w-7xl mx-auto px-4 sm:px-8 md:px-20 lg:px-20 xl:px-4 py-8">
-            <div className="flex flex-col items-center md:flex-row md:items-start">
-                <div className="w-full md:w-1/2">
+            <div className="flex flex-col-reverse items-center lg:flex-row lg:items-start">
+                <div className="w-full mt-12 lg:mt-0 lg:w-1/2">
                     <video
                         src="/assets/Home/Sample.mp4"
                         controls
-                        className="rounded-lg h-[300px] md:h-[400px] xl:h-[350px]"
+                        className="rounded-lg w-[100%] h-[300px] md:h-[400px] xl:h-[350px]"
                         autoPlay
                         loop
                         muted
@@ -22,7 +22,7 @@ const StatsSection: React.FC = () => {
                         Your browser does not support the video tag.
                     </video>
                 </div>
-                <div className="w-full mt-12 md:mt-6 md:w-1/2 md:mt-0 md:ml-8">
+                <div className="w-full lg:mt-6 lg:w-1/2 lg:mt-0 lg:ml-8">
                     <h2 className="text-2xl font-bold">Who we are</h2>
                     <p className="mt-4 text-gray-600">
                         We are a passionate and innovative team committed to fostering a
@@ -36,7 +36,7 @@ const StatsSection: React.FC = () => {
                             <Image src={Group} alt="Image" className="h-8 w-8" />
                             <Image src={Group1} alt="Image" />
                         </div>
-                        <p className="mt-8 md:mt-4 text-[#20C997]">
+                        <p className="mt-10 sm:mt-12 md:mt-8 lg:mt-4 text-[#20C997]">
                             &quot;TRAINING LATAM Empowering Latin American Talent for a Brighter
                             Future in IT.&quot;
                         </p>
