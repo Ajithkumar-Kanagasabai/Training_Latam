@@ -4,6 +4,7 @@ import Vector2 from "../../../public/assets/course/Vector (2).png";
 import Vector3 from "../../../public/assets/course/Vector (3).png";
 import Time from "../../../public/assets/course/Group.png";
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface CourseCardProps {
     selectedCourse: string;
@@ -32,7 +33,7 @@ const CourseCard: React.FC<CourseCardProps> = ({ selectedCourse }) => {
                         <span className='ml-1'>4.8</span>
                     </div>
                     <div className='flex justify-center'>
-                        <button className="w-[40%] md:w-full bg-[#20C997] px-6 md:px-12 py-1 rounded-3xl mt-0 md:mt-4 font-semibold">Get Course</button>
+                        <Link href="/contact" className="w-[40%] md:w-full bg-[#20C997] px-6 md:px-12 py-1 rounded-3xl mt-0 md:mt-4 font-semibold">Get Course</Link>
                     </div>
                 </div>
             </div>

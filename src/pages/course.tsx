@@ -7,6 +7,7 @@ import CourseDetails from '../app/coursePage/CourseDetails';
 import Syllabus from '../app/coursePage/Syllabus';
 import ReviewsSection from '../app/coursePage/ReviewsSection';
 import FAQ from '../app/coursePage/FAQ';
+import { LanguageProvider } from '../app/Lanuguage/LanguageContext';
 
 
 const course: React.FC = () => {
@@ -15,13 +16,15 @@ const course: React.FC = () => {
     return (
         <>
             <section>
-                <Header onSelectCourse={setSelectedCourse} />
-                <CourseCard selectedCourse={selectedCourse} />
-                <CourseDetails />
-                <Syllabus />
-                <ReviewsSection />
-                <FAQ />
-                <Footer />
+                <LanguageProvider>
+                    <Header onSelectCourse={setSelectedCourse} />
+                    <CourseCard selectedCourse={selectedCourse} />
+                    <CourseDetails />
+                    <Syllabus />
+                    <ReviewsSection />
+                    <FAQ />
+                    <Footer />
+                </LanguageProvider>
             </section>
         </>
     )

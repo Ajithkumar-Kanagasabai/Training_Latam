@@ -6,6 +6,7 @@ import TopSection from '../app/aboutUsPage/TopSection';
 import WhyChooseUs from '../app/aboutUsPage/WhyChooseUs';
 import VisionMission from '../app/aboutUsPage/VisionMission';
 import Philosophy from '../app/aboutUsPage/Philosophy';
+import { LanguageProvider } from '../app/Lanuguage/LanguageContext';
 
 
 const about = () => {
@@ -15,12 +16,14 @@ const about = () => {
     return (
         <>
             <section>
-                <Header onSelectCourse={setSelectedCourse} />
-                <TopSection />
-                <WhyChooseUs />
-                <VisionMission />
-                <Philosophy />
-                <Footer />
+                <LanguageProvider>
+                    <Header onSelectCourse={setSelectedCourse} />
+                    <TopSection />
+                    <WhyChooseUs />
+                    <VisionMission />
+                    <Philosophy />
+                    <Footer />
+                </LanguageProvider>
             </section>
         </>
     )

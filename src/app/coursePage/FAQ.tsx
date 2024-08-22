@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Category } from '../types';
 import FAQCategory from './FAQCategory';
 import FAQList from './FAQList';
+import Link from 'next/link';
 
 const categories: Category[] = [
     {
@@ -65,8 +66,14 @@ const FAQ = () => {
                 </div>
                 <div className="lg:w-1/4 bg-gray-100 shadow-md rounded-md p-6 lg:self-start">
                     <h2 className="text-lg font-bold mb-4">Dont find your answer!</h2>
-                    <p className="text-gray-600 mb-6">Dont worry, write your question here and our support team will help you.</p>
-                    <form>
+                    <p className="text-gray-600 mb-6">Dont worry, Contact Us and our support team will help you.</p>
+                    <Link
+                        href="/contact"
+                        className="flex justify-center w-full px-4 py-2 bg-[#20C997] text-black text-sm font-semibold rounded-md hover:font-bold transition duration-200"
+                    >
+                        Contact Us
+                    </Link>
+                    {/* <form>
                         <div className="mb-4">
                             <label htmlFor="subject" className="sr-only">Subject</label>
                             <input
@@ -91,7 +98,7 @@ const FAQ = () => {
                         >
                             Submit Question
                         </button>
-                    </form>
+                    </form> */}
                 </div>
             </div>
         </section>

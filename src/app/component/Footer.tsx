@@ -33,22 +33,26 @@ const Footer: React.FC = () => {
 
                 <div className="flex flex-col gap-4 mt-8 md:my-4">
                     <h3 className="text-lg font-semibold mb-2">Follow on Instagram</h3>
-                    <div className='md:mt-2 flex flex-row gap-4'>
-                        <div className="relative w-40 h-40 md:w-20 md:h-20 overflow-hidden aspect-w-1 aspect-h-1">
-                            <Image src={Insta1} alt="Instagram 1" layout="fill" objectFit="cover" />
+                    <Link href="https://www.instagram.com/" target='blank'>
+                        <div className='md:mt-2 flex flex-row gap-4'>
+                            <div className="relative w-40 h-40 md:w-20 md:h-20 overflow-hidden aspect-w-1 aspect-h-1">
+                                <Image src={Insta1} alt="Instagram 1" layout="fill" objectFit="cover" />
+                            </div>
+                            <div className="relative w-40 h-40 md:w-20 md:h-20 overflow-hidden aspect-w-1 aspect-h-1">
+                                <Image src={Insta2} alt="Instagram 2" layout="fill" objectFit="cover" />
+                            </div>
                         </div>
-                        <div className="relative w-40 h-40 md:w-20 md:h-20 overflow-hidden aspect-w-1 aspect-h-1">
-                            <Image src={Insta2} alt="Instagram 2" layout="fill" objectFit="cover" />
+                    </Link>
+                    <Link href="https://www.instagram.com/" target='blank'>
+                        <div className='flex flex-row gap-4'>
+                            <div className="relative w-40 h-40 md:w-20 md:h-20 overflow-hidden aspect-w-1 aspect-h-1">
+                                <Image src={Insta3} alt="Instagram 3" layout="fill" objectFit="cover" />
+                            </div>
+                            <div className="relative w-40 h-40 md:w-20 md:h-20 overflow-hidden aspect-w-1 aspect-h-1">
+                                <Image src={Insta4} alt="Instagram 4" layout="fill" objectFit="cover" />
+                            </div>
                         </div>
-                    </div>
-                    <div className='flex flex-row gap-4'>
-                        <div className="relative w-40 h-40 md:w-20 md:h-20 overflow-hidden aspect-w-1 aspect-h-1">
-                            <Image src={Insta3} alt="Instagram 3" layout="fill" objectFit="cover" />
-                        </div>
-                        <div className="relative w-40 h-40 md:w-20 md:h-20 overflow-hidden aspect-w-1 aspect-h-1">
-                            <Image src={Insta4} alt="Instagram 4" layout="fill" objectFit="cover" />
-                        </div>
-                    </div>
+                    </Link>
                 </div>
 
 
@@ -57,11 +61,21 @@ const Footer: React.FC = () => {
             <div className="mt-16 container mx-auto flex flex-col md:flex-row items-center justify-between">
                 <p className='hidden md:flex text-[12px] lg:text-[18px] text-[#727272]'>Copyright &copy; 2024 Training Latam | All rights reserved</p>
                 <div className="flex space-x-8 sm:space-x-20 md:space-x-3 xl:space-x-8 mb-6 lg:mb-0 justify-center">
-                    <Image src={Fb} alt="Fb Icon" />
-                    <Image src={Twitter} alt="Insta Icon" />
-                    <Image src={Insta} alt="Twitter Icon" />
-                    <Image src={Linkedin} alt="Twitter Icon" />
-                    <Image src={Youtube} alt="Twitter Icon" />
+                    <Link href="https://www.facebook.com/" target='blank'>
+                        <Image src={Fb} alt="Fb Icon" />
+                    </Link>
+                    <Link href="https://x.com/?lang=en" target='blank'>
+                        <Image src={Twitter} alt="Twitter Icon" />
+                    </Link>
+                    <Link href="https://www.instagram.com/" target='blank'>
+                        <Image src={Insta} alt="Insta Icon" />
+                    </Link>
+                    <Link href="https://in.linkedin.com/" target='blank'>
+                        <Image src={Linkedin} alt="Linkedin Icon" />
+                    </Link>
+                    <Link href="https://www.youtube.com/" target='blank'>
+                        <Image src={Youtube} alt="Youtube Icon" />
+                    </Link>
 
                 </div>
                 <p className='flex md:hidden text-[8px] sm:text-[14px] text-[#727272] text-center'>Copyright &copy; 2024 Training Latam | All rights reserved</p>

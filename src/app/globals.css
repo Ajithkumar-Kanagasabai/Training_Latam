@@ -4,3 +4,12 @@
 
 @import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
+
+#homepage #google_translate_element select:first-of-type {
+  display: none;
+}
+
+/* Hide the "Powered by Google" text and logo */
+.goog-te-gadget .goog-te-gadget-simple span {
+  display: none;
+}

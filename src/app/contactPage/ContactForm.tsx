@@ -1,13 +1,56 @@
-import React from 'react';
+import React, { useState } from 'react';
+import axios from 'axios';
 import Call from "../../../public/assets/contact/bxs_phone-call.png";
 import Mail from "../../../public/assets/contact/ic_sharp-email.png";
 import Address from "../../../public/assets/contact/Vector (1).png";
 import SocialIcon1 from "../../../public/assets/contact/Group.png";
 import SocialIcon2 from "../../../public/assets/contact/Twitter.png";
-
 import Image from 'next/image';
+import Link from 'next/link';
 
 const ContactForm: React.FC = () => {
+    const [formData, setFormData] = useState({
+        firstName: '',
+        lastName: '',
+        email: '',
+        phoneNumber: '',
+        course: '',
+        message: ''
+    });
+
+    const [error, setError] = useState('');
+    const [success, setSuccess] = useState('');
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value
+        });
+    };
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setError('');
+        setSuccess('');
+
+        try {
+            const response = await axios.post('https://training-latam-backend.vercel.app/api/contact', formData);
+            if (response.status === 201) {
+                setSuccess('Thanks For Contacting Us ! We Will Connect With You Shortly');
+                setFormData({
+                    firstName: '',
+                    lastName: '',
+                    email: '',
+                    phoneNumber: '',
+                    course: '',
+                    message: ''
+                });
+            }
+        } catch (err) {
+            setError('Something went wrong. Please try again.');
+        }
+    };
+
     return (
         <section className="py-12 px-4 md:px-20">
             <h2 className="text-3xl font-bold mb-6 text-gray-900 text-center">Contact Us</h2>
@@ -27,48 +70,68 @@ const ContactForm: React.FC = () => {
                     </div>
 
                     <div className="py-28 flex flex-col space-y-4 items-start justify-center">
-                        <p className="flex items-center">
-                            <Image src={Call} alt="call" className="w-6 h-6 mb-4 lg:mt-4 mr-8" />
-                            +1012 3456 789
-                        </p>
-                        <p className="flex items-center">
-                            <Image src={Mail} alt="mail" className="w-6 h-6 mb-4 lg:mt-4 mr-8" />
-                            demo@gmail.com
-                        </p>
-                        <p className="flex items-center">
-                            <Image src={Address} alt="location" className="w-5 h-5 mb-4 lg:mt-4 mr-8" />
-                            Address
-                        </p>
+                        <Link href="tel:+1012 3456 789">
+                            <p className="flex items-center">
+                                <Image src={Call} alt="call" className="w-6 h-6 mb-4 lg:mt-4 mr-8" />
+                                +1012 3456 789
+                            </p>
+                        </Link>
+                        <Link href="mailto:demo@gmail.com">
+                            <p className="flex items-center">
+                                <Image src={Mail} alt="mail" className="w-6 h-6 mb-4 lg:mt-4 mr-8" />
+                                demo@gmail.com
+                            </p>
+                        </Link>
+                        <Link href="https://maps.google.com" target="_blank" rel="noopener noreferrer">
+                            <p className="flex items-center">
+                                <Image src={Address} alt="location" className="w-5 h-5 mb-4 lg:mt-4 mr-8" />
+                                Address
+                            </p>
+                        </Link>
                     </div>
 
                     <div className="flex flex-row items-end">
                         <div className="px-3">
-                            <Image src={SocialIcon2} alt="SocialMedia" className="w-6 h-6" />
+                            <Link href="https://x.com/?lang=en" target="_blank">
+                                <Image src={SocialIcon2} alt="SocialMedia" className="w-6 h-6" />
+                            </Link>
                         </div>
                         <div className="px-3">
-                            <Image src={SocialIcon1} alt="twitter" className="w-6 h-6" />
+                            <Link href="https://www.instagram.com/" target="_blank">
+                                <Image src={SocialIcon1} alt="twitter" className="w-6 h-6" />
+                            </Link>
                         </div>
                         <div className="px-3">
-                            <Image src={SocialIcon2} alt="" className="w-6 h-6" />
+                            <Link href="https://x.com/?lang=en" target="_blank">
+                                <Image src={SocialIcon2} alt="" className="w-6 h-6" />
+                            </Link>
                         </div>
                     </div>
                 </div>
 
                 <div className="p-8 w-full lg:w-[70%]">
-                    <form className="space-y-6">
+                    <form className="space-y-6" onSubmit={handleSubmit}>
                         <div className="flex space-x-4">
                             <div className="w-1/2">
                                 <label className="block text-sm font-semibold text-black">First Name</label>
                                 <input
                                     type="text"
+                                    name="firstName"
+                                    value={formData.firstName}
+                                    onChange={handleChange}
                                     className="w-full p-2 border-b-2 border-gray-300 focus:outline-none focus:border-gray-400"
+                                    required
                                 />
                             </div>
                             <div className="w-1/2">
                                 <label className="block text-sm font-semibold text-black">Last Name</label>
                                 <input
                                     type="text"
+                                    name="lastName"
+                                    value={formData.lastName}
+                                    onChange={handleChange}
                                     className="w-full p-2 border-b-2 border-gray-300 focus:outline-none focus:border-gray-400"
+                                    required
                                 />
                             </div>
                         </div>
@@ -77,14 +140,22 @@ const ContactForm: React.FC = () => {
                                 <label className="block text-sm font-semibold text-black mt-8">Email</label>
                                 <input
                                     type="email"
+                                    name="email"
+                                    value={formData.email}
+                                    onChange={handleChange}
                                     className="w-full p-2 border-b-2 border-gray-300 focus:outline-none focus:border-gray-400"
+                                    required
                                 />
                             </div>
                             <div className="w-full">
                                 <label className="block text-sm font-semibold text-black mt-8">Phone Number</label>
                                 <input
                                     type="text"
+                                    name="phoneNumber"
+                                    value={formData.phoneNumber}
+                                    onChange={handleChange}
                                     className="w-full p-2 border-b-2 border-gray-300 focus:outline-none focus:border-gray-400"
+                                    required
                                 />
                             </div>
                         </div>
@@ -96,7 +167,9 @@ const ContactForm: React.FC = () => {
                                         type="radio"
                                         name="course"
                                         value="Full Stack Development"
+                                        onChange={handleChange}
                                         className="focus:ring-0 focus:outline-none text-green-500"
+                                        required
                                     />
                                     <span className='text-[#717171]'>Full stack Development</span>
                                 </label>
@@ -105,7 +178,9 @@ const ContactForm: React.FC = () => {
                                         type="radio"
                                         name="course"
                                         value="Data Science"
+                                        onChange={handleChange}
                                         className="focus:ring-0 focus:outline-none text-green-500"
+                                        required
                                     />
                                     <span className='text-[#717171]'>Data Science</span>
                                 </label>
@@ -114,7 +189,9 @@ const ContactForm: React.FC = () => {
                                         type="radio"
                                         name="course"
                                         value="DevOps and IT Management"
+                                        onChange={handleChange}
                                         className="focus:ring-0 focus:outline-none text-green-500"
+                                        required
                                     />
                                     <span className='text-[#717171]'>DevOps and IT Management</span>
                                 </label>
@@ -123,11 +200,19 @@ const ContactForm: React.FC = () => {
                         <div>
                             <label className="block text-sm font-semibold text-black mt-12">Message</label>
                             <textarea
+                                name="message"
+                                value={formData.message}
+                                onChange={handleChange}
                                 placeholder="Write your message.."
                                 className="w-full p-2 border-b-2 border-gray-300 focus:outline-none focus:border-gray-400 mt-4"
-                                rows={1}>
-                            </textarea>
+                                rows={4}
+                                required
+                            />
                         </div>
+
+                        {error && <p className="text-red-500 text-center">{error}</p>}
+                        {success && <p className="text-green-500 text-center">{success}</p>}
+
                         <div className='flex justify-center md:justify-end'>
                             <button
                                 type="submit"
@@ -137,7 +222,6 @@ const ContactForm: React.FC = () => {
                             </button>
                         </div>
                     </form>
-
                 </div>
             </div>
         </section>
